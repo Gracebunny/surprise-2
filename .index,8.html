@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Birthday</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .welcome-message {
+            font-size: 36px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #FF6347;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .birthday-button {
+            display: block;
+            width: 250px;
+            height: 70px;
+            margin: 20px auto;
+            background-color: #FF6347;
+            border: none;
+            border-radius: 35px;
+            font-size: 24px;
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, background-color 0.3s ease;
+        }
+
+        .birthday-button:hover {
+            transform: scale(1.1);
+            background-color: #FF4500;
+        }
+
+        .birthday-button:active {
+            transform: scale(0.9);
+        }
+
+        .balloon {
+            font-size: 70px;
+            text-align: center;
+            margin-top: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+
+        .hidden-content {
+            display: none;
+            padding: 30px;
+            text-align: center;
+            background-color: #333;
+            border-radius: 15px;
+            margin-top: 40px;
+            animation: fadeInUp 2s ease-in-out;
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .image-section {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .image-section img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="welcome-message">
+        🎉 WELCOME TO THIS SURPRISE BIRTHDAY GIRL! 🎉
+    </div>
+
+    <button class="birthday-button" id="clickButton" onclick="showMessage()">Click Me!</button>
+
+    <div class="balloon">
+        🎈🎈🎈
+    </div>
+
+    <div class="hidden-content" id="hiddenContent">
+        <div class="balloon">🎈🎉🎈</div>
+        <h2>🎉🎂HAPPY BIRTHDAY BESTIE!🎉🎂</h2>
+        <p>To My Dearest Bestie,
+
+            I want to start by telling you how incredibly grateful I am to have you in my life. From the moment we became friends, I knew there was something truly special about you. You bring so much light, love, and laughter into every room, and I feel blessed to be the one who gets to walk beside you in this crazy, beautiful journey we call life.
+            
+            Through every up and down, you’ve always been there—whether we’re laughing over silly moments, sharing our dreams, or supporting each other through tough times. I honestly don’t know where I would be without you. You have this magic about you that turns ordinary moments into unforgettable memories. You’ve taught me what true friendship is: loyalty, understanding, and unconditional love.
+            
+            I admire you more than you know—your strength, your kindness, and your ability to make everyone around you feel like they matter. You inspire me every single day to be the best version of myself, and I hope I do the same for you. You’re not just my best friend; you’re my sister, my partner in crime, my rock, and the one person I know will always have my back, no matter what.
+            
+            Today, on your special day, I just want to remind you how extraordinary you are. You deserve all the happiness, love, and success the world has to offer. May this year bring you closer to all your dreams, and may you continue to shine brighter than ever before. I will always be here to celebrate with you, to support you, and to remind you that no matter what, you are never alone.
+            
+            Thank you for being you. For being my best friend. For making every day better. I am so lucky to have you by my side, and I can’t wait to create even more beautiful memories together.
+            
+            Happy Birthday, my wonderful best friend! I love you more than words can say, and I’m so proud to call you mine.
+            
+            With all my love and affection,
+            Grace</p>
+        <div class="balloon">🎉🎈🎉</div>
+    </div>
+
+    <!-- Image section -->
+    <div class="image-section" id="imageSection">
+        <h3>READ THE BELOW</h3>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAx2ZUibVdiGqR2LxtTjNUs8xhQcUR2HSXzQ&s" alt="Special Memory">
+    </div>
+
+    <script>
+        function showMessage() {
+            // Hide the button after click
+            document.getElementById('clickButton').style.display = 'none';
+            
+            // Show the surprise message
+            document.getElementById('hiddenContent').style.display = 'block';
+
+            // Show the image section after a small delay (for effect)https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAx2ZUibVdiGqR2LxtTjNUs8xhQcUR2HSXzQ&s
+            setTimeout(function() {
+                document.getElementById('imageSection').style.display = 'block';
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
